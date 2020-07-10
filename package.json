@@ -1,0 +1,25 @@
+{
+  "name": "add-reviewer-gh-action",
+  "version": "1.0.0",
+  "description": "GitHub Action to add reviewer(s) to a pull request.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AveryCameronUofR/add-reviewer-gh-action.git"
+  },
+  "keywords": [],
+  "author": "Avery Cameron",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AveryCameronUofR/add-reviewer-gh-action/issues"
+  },
+  "homepage": "https://github.com/AveryCameronUofR/add-reviewer-gh-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^4.0.0",
+    "@zeit/ncc": "^0.22.3"
+  }
+}
