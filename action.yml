@@ -1,0 +1,15 @@
+name: "Add Pull Request Reviewer"
+description: "Adds reviewer(s) to a pull request"
+branding:
+  icon: "bar-chart"
+  color: "green"
+inputs:
+  reviewers: # minimum new coverage
+    description: "Reviewer(s) to add, in comma separated list."
+    required: true
+  token:
+    description: GitHub Personal Access Token
+    required: true
+runs:
+  using: "node12"
+  main: "dist/index.js"
