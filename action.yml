@@ -4,7 +4,7 @@ branding:
   icon: "bar-chart"
   color: "green"
 inputs:
-  reviewers: # minimum new coverage
+  reviewers:
     description: "Reviewer(s) to add, in comma separated list."
     required: true
   token:
