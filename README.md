@@ -1,5 +1,7 @@
 # add-reviewer-gh-action
- GitHub Action to add reviewer(s) to a pull request.
+ GitHub Action to add reviewer(s) to a pull request. 
+ 
+GitHub will add CODEOWNERS as reviewers at the start of a pull request, before any steps of the workflow have run or passed. This action allows reviewers to be specified so that they will be added when this step of the workflow runs, such as at the end of a workflow, instead of at the start to avoid early notifications while work is not ready.
 
 ## Usage
 ```
