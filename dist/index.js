@@ -149,7 +149,7 @@ const github = __webpack_require__(136);
 function run() {
   try {
     const reviewers = core.getInput("reviewers");
-    const prReviewers = reviewers.split(",");
+    const prReviewers = reviewers.split(", ");
     const token = process.env["GITHUB_TOKEN"] || core.getInput("token");
     const octokit = new github.getOctokit(token);
     const context = github.context;
@@ -160,12 +160,10 @@ function run() {
     }
 
     const pullRequestNumber = context.payload.pull_request.number;
-    prReviewers.forEach(reviewer => {
-      octokit.pulls.requestReviewers({
-        ...context.repo,
-        pull_number: pullRequestNumber,
-        reviewers: reviewer,
-      });
+    octokit.pulls.requestReviewers({
+      ...context.repo,
+      pull_number: pullRequestNumber,
+      reviewers: prReviewers,
     });
   } catch (error) {
     core.setFailed(error.message);
