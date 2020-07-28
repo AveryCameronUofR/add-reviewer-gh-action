@@ -9,7 +9,6 @@ inputs:
     required: true
   token:
     description: GitHub Personal Access Token
-    required: true
 runs:
   using: "node12"
   main: "dist/index.js"
