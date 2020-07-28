@@ -160,10 +160,12 @@ function run() {
     }
 
     const pullRequestNumber = context.payload.pull_request.number;
-    octokit.pulls.requestReviewers({
-      ...context.repo,
-      pull_number: pullRequestNumber,
-      reviewers: prReviewers,
+    prReviewers.forEach(reviewer => {
+      octokit.pulls.requestReviewers({
+        ...context.repo,
+        pull_number: pullRequestNumber,
+        reviewers: reviewer,
+      });
     });
   } catch (error) {
     core.setFailed(error.message);
