@@ -1,6 +1,15 @@
 # add-reviewer-gh-action
  GitHub Action to add reviewer(s) to a pull request.
 
+## Usage
+```
+- name: Add Pull Request Reviewer
+      uses: AveryCameronUofR/add-reviewer-gh-action@1.0.3
+      with: 
+        reviewers: "AveryCameronUofR"
+        token: ${{ secrets.GITHUB_TOKEN }}
+ ```
+ 
 ### Action Inputs
 
 | Name | Description | Default |
