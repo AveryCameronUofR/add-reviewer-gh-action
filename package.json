@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/AveryCameronUofR/add-reviewer-gh-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.4",
+    "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0",
     "@zeit/ncc": "^0.22.3"
   }
