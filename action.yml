@@ -9,6 +9,8 @@ inputs:
     required: true
   token:
     description: GitHub Personal Access Token
+  remove:
+    description: "Remove a review request (defaults to false)"
 runs:
   using: "node12"
   main: "dist/index.js"

@@ -12,6 +12,7 @@ const github = require("@actions/github");
 function run() {
   try {
     const reviewers = core.getInput("reviewers");
+    const removeRequest = core.getInput("remove").toLowerCase() === "true";
     const prReviewers = reviewers.split(", ");
     const token = process.env["GITHUB_TOKEN"] || core.getInput("token");
     const octokit = new github.getOctokit(token);
@@ -23,11 +24,17 @@ function run() {
     }
 
     const pullRequestNumber = context.payload.pull_request.number;
-    octokit.pulls.requestReviewers({
+    const params = {
       ...context.repo,
       pull_number: pullRequestNumber,
       reviewers: prReviewers,
-    });
+    };
+
+    if (removeRequest) {
+      octokit.pulls.removeRequestedReviewers(params);
+    } else {
+      octokit.pulls.requestReviewers(params);
+    }
   } catch (error) {
     core.setFailed(error.message);
   }
